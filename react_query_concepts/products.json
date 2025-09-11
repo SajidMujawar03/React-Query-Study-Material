@@ -1,0 +1,123 @@
+{"products":[
+  {
+    "title": "Smartphone Stand Pro",
+    "description": "Adjustable aluminum stand for hands-free video calls and streaming.",
+    "category": "Electronics Accessories",
+    "image": "https://example.com/images/smartphone-stand.jpg"
+  },
+  {
+    "title": "Eco-Friendly Water Bottle",
+    "description": "Reusable stainless steel bottle with thermal insulation.",
+    "category": "Health & Wellness",
+    "image": "https://example.com/images/water-bottle.jpg"
+  },
+  {
+    "title": "Bluetooth Noise-Cancelling Headphones",
+    "description": "Over-ear headphones with 30-hour battery life and built-in mic.",
+    "category": "Audio & Headphones",
+    "image": "https://example.com/images/bluetooth-headphones.jpg"
+  },
+  {
+    "title": "Organic Cotton T-Shirt",
+    "description": "Soft and breathable tee made from 100% organic cotton.",
+    "category": "Apparel",
+    "image": "https://example.com/images/cotton-tshirt.jpg"
+  },
+  {
+    "title": "Smart Home Thermostat",
+    "description": "Wi-Fi enabled thermostat with energy-saving features.",
+    "category": "Home Automation",
+    "image": "https://example.com/images/smart-thermostat.jpg"
+  },
+  {
+    "title": "Portable Solar Charger",
+    "description": "Compact solar panel charger for outdoor adventures.",
+    "category": "Outdoor Gear",
+    "image": "https://example.com/images/solar-charger.jpg"
+  },
+  {
+    "title": "Leather Wallet",
+    "description": "Slim bifold wallet with RFID protection.",
+    "category": "Accessories",
+    "image": "https://example.com/images/leather-wallet.jpg"
+  },
+  {
+    "title": "Ergonomic Office Chair",
+    "description": "Adjustable chair with lumbar support for long hours.",
+    "category": "Furniture",
+    "image": "https://example.com/images/office-chair.jpg"
+  },
+  {
+    "title": "Smart Fitness Tracker",
+    "description": "Water-resistant tracker with heart rate monitoring.",
+    "category": "Wearable Technology",
+    "image": "https://example.com/images/fitness-tracker.jpg"
+  },
+  {
+    "title": "Electric Toothbrush",
+    "description": "Sonic toothbrush with multiple cleaning modes.",
+    "category": "Personal Care",
+    "image": "https://example.com/images/toothbrush.jpg"
+  },
+  {
+    "title": "Smartphone Camera Lens Kit",
+    "description": "Clip-on lenses for enhanced mobile photography.",
+    "category": "Photography Accessories",
+    "image": "https://example.com/images/lens-kit.jpg"
+  },
+  {
+    "title": "Yoga Mat with Alignment Guide",
+    "description": "Non-slip mat with printed alignment markers.",
+    "category": "Fitness Equipment",
+    "image": "https://example.com/images/yoga-mat.jpg"
+  },
+  {
+    "title": "Adjustable Laptop Stand",
+    "description": "Portable stand with multiple height settings.",
+    "category": "Office Supplies",
+    "image": "https://example.com/images/laptop-stand.jpg"
+  },
+  {
+    "title": "Noise-Cancelling Sleep Mask",
+    "description": "Mask with built-in speakers for soothing sounds.",
+    "category": "Sleep Aids",
+    "image": "https://example.com/images/sleep-mask.jpg"
+  },
+  {
+    "title": "Digital Drawing Tablet",
+    "description": "Pen tablet compatible with major design software.",
+    "category": "Art & Design Tools",
+    "image": "https://example.com/images/drawing-tablet.jpg"
+  },
+  {
+    "title": "Smart Water Leak Detector",
+    "description": "Sensors that alert you to potential water leaks.",
+    "category": "Home Security",
+    "image": "https://example.com/images/leak-detector.jpg"
+  },
+  {
+    "title": "Compact Air Purifier",
+    "description": "Portable purifier with HEPA filter for small spaces.",
+    "category": "Home Appliances",
+    "image": "https://example.com/images/air-purifier.jpg"
+  },
+  {
+    "title": "Smart Light Bulb",
+    "description": "Wi-Fi enabled bulb with adjustable color temperature.",
+    "category": "Smart Home Devices",
+    "image": "https://example.com/images/smart-bulb.jpg"
+  },
+  {
+    "title": "Portable Mini Projector",
+    "description": "Compact projector with HDMI and USB connectivity.",
+    "category": "Home Entertainment",
+    "image": "https://example.com/images/mini-projector.jpg"
+  },
+  {
+    "title": "Multi-Function Kitchen Blender",
+    "description": "Blender with multiple speed settings and attachments.",
+    "category": "Kitchen Appliances",
+    "image": "https://example.com/images/kitchen-blender.jpg"
+  }
+]
+}
