@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
-const Home:React.FC = () => {
-  const [activeTab, setActiveTab] = useState<'fetch' | 'react-query'>('fetch');
+const Home: React.FC = () => {
+  const [activeTab, setActiveTab] = useState<"fetch" | "react-query">("fetch");
   const [showCode, setShowCode] = useState(false);
+  const [showWrapper, setShowWrapper] = useState(false);
 
   const fetchCode = `
 useEffect(() => {
@@ -28,6 +29,22 @@ const { data, error, isLoading } = useQuery({
 });
 `;
 
+  const wrapperCode = `
+import { QueryClientProvider, QueryClient } from "@tanstack/react-query";
+import { createRoot } from "react-dom/client";
+import App from "./App";
+
+// step 1: create Client
+const queryClient = new QueryClient();
+
+createRoot(document.getElementById('root')).render(
+// step 2: Use client in QueryClientProvider
+  <QueryClientProvider client={queryClient}>
+    <App />
+  </QueryClientProvider>
+);
+`;
+
   return (
     <div className="min-h-screen bg-gray-50 p-8">
       <h1 className="text-4xl font-bold mb-6 text-center">
@@ -36,25 +53,35 @@ const { data, error, isLoading } = useQuery({
 
       <p className="text-center text-gray-700 mb-8 max-w-2xl mx-auto">
         In React, there are different ways to fetch and manage server data.
-        Below we compare the traditional <strong>useEffect + fetch</strong> approach
-        with the modern <strong>TanStack React Query</strong> approach.
+        Below we compare the traditional <strong>useEffect + fetch</strong>{" "}
+        approach with the modern <strong>TanStack React Query</strong> approach.
       </p>
 
       {/* Tabs */}
       <div className="flex justify-center mb-6 gap-4">
         <button
           className={`px-6 py-2 rounded-md font-semibold ${
-            activeTab === 'fetch' ? 'bg-blue-600 text-white' : 'bg-white border'
+            activeTab === "fetch"
+              ? "bg-blue-600 text-white"
+              : "bg-white border"
           }`}
-          onClick={() => setActiveTab('fetch')}
+          onClick={() => {
+            setActiveTab("fetch");
+            setShowCode(false);
+          }}
         >
           Traditional fetch
         </button>
         <button
           className={`px-6 py-2 rounded-md font-semibold ${
-            activeTab === 'react-query' ? 'bg-blue-600 text-white' : 'bg-white border'
+            activeTab === "react-query"
+              ? "bg-blue-600 text-white"
+              : "bg-white border"
           }`}
-          onClick={() => setActiveTab('react-query')}
+          onClick={() => {
+            setActiveTab("react-query");
+            setShowCode(false);
+          }}
         >
           React Query
         </button>
@@ -62,19 +89,22 @@ const { data, error, isLoading } = useQuery({
 
       {/* Content */}
       <div className="max-w-4xl mx-auto">
-        {activeTab === 'fetch' && (
+        {activeTab === "fetch" && (
           <div className="bg-white shadow-md rounded-lg p-6">
-            <h2 className="text-2xl font-bold mb-4">Traditional fetch + useEffect</h2>
+            <h2 className="text-2xl font-bold mb-4">
+              Traditional fetch + useEffect
+            </h2>
             <p className="mb-4 text-gray-700">
-              In this approach, you manually call <code>fetch</code> inside a <code>useEffect</code> hook,
-              manage loading and error states, and update state with the response.
+              In this approach, you manually call <code>fetch</code> inside a{" "}
+              <code>useEffect</code> hook, manage loading and error states, and
+              update state with the response.
             </p>
 
             <button
               className="text-blue-600 underline mb-4"
               onClick={() => setShowCode(!showCode)}
             >
-              {showCode ? 'Hide Code' : 'Show Code'}
+              {showCode ? "Hide Code" : "Show Code"}
             </button>
 
             {showCode && (
@@ -85,24 +115,39 @@ const { data, error, isLoading } = useQuery({
           </div>
         )}
 
-        {activeTab === 'react-query' && (
+        {activeTab === "react-query" && (
           <div className="bg-white shadow-md rounded-lg p-6">
             <h2 className="text-2xl font-bold mb-4">TanStack React Query</h2>
             <p className="mb-4 text-gray-700">
-              React Query abstracts away manual fetching and caching. It provides
-              automatic caching, refetching, and state management for your server data.
+              React Query abstracts away manual fetching and caching. It
+              provides automatic caching, refetching, and state management for
+              your server data.
             </p>
 
             <button
               className="text-blue-600 underline mb-4"
               onClick={() => setShowCode(!showCode)}
             >
-              {showCode ? 'Hide Code' : 'Show Code'}
+              {showCode ? "Hide Code" : "Show Code"}
             </button>
 
             {showCode && (
               <pre className="bg-gray-100 p-4 rounded-md overflow-x-auto text-sm">
                 {reactQueryCode}
+              </pre>
+            )}
+
+            {/* Wrapper Section */}
+            <button
+              className="text-green-600 underline mb-4 block"
+              onClick={() => setShowWrapper(!showWrapper)}
+            >
+              {showWrapper ? "Hide Wrapper Setup" : "Show Wrapper Setup"}
+            </button>
+
+            {showWrapper && (
+              <pre className="bg-gray-100 p-4 rounded-md overflow-x-auto text-sm">
+                {wrapperCode}
               </pre>
             )}
           </div>
