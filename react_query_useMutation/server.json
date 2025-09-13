@@ -1,0 +1,71 @@
+{
+  "posts": [
+    {
+      "id": "1",
+      "title": "Getting Started with React Query",
+      "postDetails": "A beginner-friendly guide to understanding queries, mutations, and caching in React Query.",
+      "createdAt": "2025-09-01T10:15:00Z",
+      "updatedAt": "2025-09-01T12:30:00Z"
+    },
+    {
+      "id": "2",
+      "title": "Understanding Axios Interceptors",
+      "postDetails": "Learn how to set up request and response interceptors for handling authentication and errors globally.",
+      "createdAt": "2025-09-02T09:00:00Z",
+      "updatedAt": "2025-09-02T11:45:00Z"
+    },
+    {
+      "id": "3",
+      "title": "Building Infinite Scroll with React Query",
+      "postDetails": "Step-by-step explanation of implementing infinite queries with pagination using React Query.",
+      "createdAt": "2025-09-03T14:20:00Z",
+      "updatedAt": "2025-09-03T16:10:00Z"
+    },
+    {
+      "id": "4",
+      "title": "Mastering Tailwind CSS Dark Mode",
+      "postDetails": "How to implement light and dark themes in Tailwind CSS with smooth transitions.",
+      "createdAt": "2025-09-05T08:30:00Z",
+      "updatedAt": "2025-09-05T09:40:00Z"
+    },
+    {
+      "id": "5",
+      "title": "Node.js Project Structure for Professionals",
+      "postDetails": "Best practices for organizing controllers, services, routes, and middleware in a scalable backend.",
+      "createdAt": "2025-09-07T18:50:00Z",
+      "updatedAt": "2025-09-07T20:00:00Z"
+    },
+    {
+      "id": "ac25",
+      "title": "sajid",
+      "postDetails": "fnjnjfgkd"
+    },
+    {
+      "id": "ba80",
+      "title": "sajid",
+      "postDetails": "mujawar"
+    },
+    {
+      "id": "c2e0",
+      "title": "fgfdgdf",
+      "postDetails": "gfdfgdgf"
+    },
+    {
+      "id": "9ddb",
+      "title": "fgeggrwhh",
+      "postDetails": "hrhfghdghf"
+    },
+    {
+      "id": "15e8",
+      "title": "dhjvbdljv",
+      "postDetails": "vn dfv dnv dj nvjd vndn vdv"
+    },
+    {
+      "id": 11,
+      "createdAt": 1757806434600,
+      "updatedAt": 1757806434600,
+      "title": "fdegdfg",
+      "postDetails": "fgdfgdgf"
+    }
+  ]
+}
