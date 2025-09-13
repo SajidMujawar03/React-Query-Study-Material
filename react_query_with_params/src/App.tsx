@@ -7,7 +7,7 @@ import Post from './Product'
 import Navbar from './Navbar'
 
 function App() {
-  
+
 
   return (
     <>
