@@ -1,69 +1,26 @@
-# React + TypeScript + Vite
+This is a React component that demonstrates **client-side pagination** using **React Query**. It fetches product data from a public API, displaying it in a horizontally scrollable list with "Previous" and "Next" buttons to navigate between pages.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+---
 
-Currently, two official plugins are available:
+### 📚 **Core Concepts**
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+This project illustrates a key feature of React Query called `keepPreviousData`, which is crucial for creating a smooth user experience during pagination.
 
-## Expanding the ESLint configuration
+* **`queryKey` with Dynamic Value**: The `queryKey` is an array that uniquely identifies the data being fetched. Here, it includes the `page` number (`["page", page]`). This tells React Query to treat each page as a separate, cacheable piece of data. For example, `["page", 1]` is a different query from `["page", 2]`. When the `page` state changes, React Query knows it needs to fetch new data because the query key has changed.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+* **`keepPreviousData`**: This is a powerful optimization feature for pagination. When the `page` state changes and a new query is initiated, React Query, by default, would show a loading state while waiting for the new data. This can cause a jarring flash of a loading spinner or an empty screen.  By setting `placeholderData: keepPreviousData`, you instruct React Query to **continue displaying the previously fetched data** (`data` from `page - 1`) until the new data for the current page is successfully fetched. This provides a much smoother, more seamless transition for the user.
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+* **`fetch` with Offset and Limit**: The `queryFn` uses the `offset` and `limit` URL parameters to request a specific slice of data from the API. The `itemsPerPage` constant sets the `limit` to 10, and the `offset` is calculated based on the current `page` number. This is how the component requests the correct set of items for the currently selected page.
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+* **State Management**: A local state variable, `page`, is used to keep track of the current page number. Clicking the "Next" or "Prev" buttons updates this state, which in turn triggers a new `useQuery` fetch due to the change in the `queryKey`.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+---
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### 💡 **How It Works**
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+1.  When the component first loads, it fetches data for `page: 1`. The `queryKey` is `["page", 1]`.
+2.  The "Next" button click increments the `page` state to `2`.
+3.  Because the `queryKey` changes from `["page", 1]` to `["page", 2]`, React Query starts fetching the new data.
+4.  **Crucially**, thanks to `placeholderData: keepPreviousData`, the UI **continues to show the data from `page 1`** while the request for `page 2` is in flight.
+5.  Once the new data for `page 2` arrives, the UI instantly updates with the new content, and the previous data is no longer displayed.
+6.  This process is repeated as the user navigates through the pages, providing a fast and flicker-free user experience.

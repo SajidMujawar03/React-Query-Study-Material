@@ -1,69 +1,27 @@
-# React + TypeScript + Vite
+This is a React application that demonstrates the basics of **React Query** for fetching and caching dynamic data. The homepage provides a simple interface with links to individual post pages, each of which would fetch data for a specific post using its ID.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+---
 
-Currently, two official plugins are available:
+### 📚 **Core Concepts**
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+This project focuses on the fundamental concepts of using React Query for dynamic data fetching, particularly with unique identifiers.
 
-## Expanding the ESLint configuration
+* **Dynamic `useQuery`**: The primary goal is to show how `useQuery` can be used to fetch data for a specific item, such as a blog post. Instead of fetching a list of all posts at once, we use the post's **ID** as part of the query to fetch just one post. This is a common pattern for detail pages.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+    **Example:** When a user navigates to `/post/1`, a component on that page would use `useQuery` with a query key that includes the ID, like `useQuery(['post', 1], ...)` to fetch data for post with ID `1`.
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+* **Query Key**: The **query key** is a unique identifier that React Query uses to manage and cache data. For dynamic queries, the query key must include the variable part of the query, such as the `post ID`. For instance, `['post', 1]` is a different query key from `['post', 2]`, allowing React Query to cache and manage each post's data separately. This prevents a user from having to refetch post 1's data if they've already visited that page.
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+---
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+### 💻 **How it Works**
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+The `Home` component serves as a simple landing page. It doesn't fetch any data itself. Instead, it generates a series of links to hypothetical post detail pages (`/post/1`, `/post/2`, etc.).
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+1.  **Welcome & Explanation**: The page begins with a clear header and a brief explanation of how `useQuery` works for individual items, highlighting the role of the post's **ID**.
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+2.  **Dynamic Links**: It maps over an array of numbers `[1, 2, 3, 4, 5]` to create five different `Link` components. Each `Link` directs the user to a unique URL, such as `/post/1` or `/post/5`.
+
+3.  **Demonstration**: When a user clicks on one of these links, a different component (not shown in this file) would load. That component would then use React Query, with the ID from the URL, to fetch and display the corresponding post's data.
+
+This setup effectively simulates a real-world scenario where a list of items on a homepage links to individual detail pages that dynamically fetch their own data.
