@@ -1,0 +1,46 @@
+{
+  "products": [
+    {
+      "id": "1",
+      "title": "Wireless Headphones",
+      "description": "Over-ear Bluetooth headphones with noise cancellation and 30-hour battery life.",
+      "image": "https://picsum.photos/200?random=1"
+    },
+    {
+      "id": "2",
+      "title": "Smartwatch",
+      "description": "Fitness-focused smartwatch with heart rate monitoring, GPS, and waterproof design.",
+      "image": "https://picsum.photos/200?random=2"
+    },
+    {
+      "id": "3",
+      "title": "Mechanical Keyboard",
+      "description": "RGB backlit mechanical keyboard with tactile switches for gamers and programmers.",
+      "image": "https://picsum.photos/200?random=3"
+    },
+    {
+      "id": "4",
+      "title": "4K Monitor",
+      "description": "27-inch UHD 4K monitor with HDR support and ultra-thin bezels.",
+      "image": "https://picsum.photos/200?random=4"
+    },
+    {
+      "id": "5",
+      "title": "Gaming Mouse",
+      "description": "Ergonomic gaming mouse with 8 programmable buttons and adjustable DPI.",
+      "image": "https://picsum.photos/200?random=5"
+    },
+    {
+      "id": "4039",
+      "title": "m jh ",
+      "description": "kjb hjbjhbjh",
+      "image": "kn kj jkk"
+    },
+    {
+      "id": "6ca8",
+      "title": "mn  ,n b",
+      "description": "nmn ,j ,jh",
+      "image": "mn  m jh"
+    }
+  ]
+}

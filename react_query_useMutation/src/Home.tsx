@@ -29,7 +29,7 @@ const Home = () => {
         className="bg-gray-900 text-green-400 p-6 rounded-xl shadow-lg overflow-x-auto"
       >
         <pre className="text-sm">
-{`const { mutate, isLoading, isError } = useMutation({
+{`const { mutate, isPending, isError } = useMutation({
   mutationFn: (newPost) => createPost(newPost),
   onSuccess: () => {
     // refresh or update state
