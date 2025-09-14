@@ -1,0 +1,19 @@
+@import "tailwindcss";
+
+/* if you want animations or use shadcn components using that */
+
+/* define root CSS variables for shadcn / tailwind theming */
+:root {
+  /* example theme variables; you can customize */
+  --background: 0 0% 100%;
+  --foreground: 222.2 47.4% 11.2%;
+  /* more as per shadcn UI defaults: border, input, primary, etc. */
+}
+
+/* using new theme directive in tailwind v4 */
+@theme {
+  /* map your CSS variables to Tailwind colors / utilities if needed */
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+  /* etc */
+}

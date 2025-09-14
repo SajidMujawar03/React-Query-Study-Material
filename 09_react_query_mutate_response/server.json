@@ -1,0 +1,39 @@
+{
+  "products": [
+    {
+      "id": "1",
+      "title": "Wireless Mouse",
+      "description": "Ergonomic wireless mouse with USB receiver",
+      "image": "https://images.unsplash.com/photo-1587825140708-6d4d9c5682c4",
+      "price": 25.99
+    },
+    {
+      "id": "2",
+      "title": "Mechanical Keyboard",
+      "description": "RGB backlit mechanical keyboard with blue switches",
+      "image": "https://images.unsplash.com/photo-1517336714731-489689fd1ca8",
+      "price": 79.99
+    },
+    {
+      "id": "3",
+      "title": "Gaming Monitor",
+      "description": "27-inch 144Hz gaming monitor with 1ms response time",
+      "image": "https://images.unsplash.com/photo-1517336714731-489689fd1ca8",
+      "price": 249.99
+    },
+    {
+      "id": "4",
+      "title": "USB-C Hub",
+      "description": "Multiport USB-C hub with HDMI, USB 3.0, and SD card reader",
+      "image": "https://images.unsplash.com/photo-1587825140708-6d4d9c5682c4",
+      "price": 39.99
+    },
+    {
+      "id": "5",
+      "title": "Noise Cancelling Headphones",
+      "description": "Over-ear wireless headphones with active noise cancellation",
+      "image": "https://images.unsplash.com/photo-1512314889357-e157c22f938d",
+      "price": 129.99
+    }
+  ]
+}
